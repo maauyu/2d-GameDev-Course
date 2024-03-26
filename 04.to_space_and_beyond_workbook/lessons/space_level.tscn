@@ -12,6 +12,7 @@ position = Vector2(934, 555)
 
 [node name="MainThruster" parent="ship" instance=ExtResource("2_ktut6")]
 position = Vector2(-33, 0)
+points = PackedVector2Array(0, 0, 33.3333, 0, 66.6667, 0)
 
 [node name="SideThruster" parent="ship" instance=ExtResource("3_dprlu")]
 position = Vector2(-46, -21)
