@@ -15,6 +15,13 @@ func _ready() -> void:
 	area_entered.connect(_on_area_entered)
 	set_process(false)
 
+func set_coin_count(new_coin_count: int) -> void:
+	coins = new_coin_count
+	get_node("UI/CoinsCount").text = "x" + str(coins)
+
+func set_energy(new_energy: int) -> void:
+	energy = new_energy
+	get_node("UI/EnergyBar").value = energy
 
 func set_target_position(new_target_position: Vector2) -> void:
 	target_position = new_target_position
@@ -33,8 +40,11 @@ func _process(delta: float) -> void:
 	if position.distance_to(target_position) < 10.0:
 		set_process(false)
 		target_reached.emit()
+		
 
 
 func _on_area_entered(area_that_entered: Area2D) -> void:
-	energy += 20.0
-	get_node("UI/EnergyBar").value = energy
+	if area_that_entered.is_in_group("coin"):
+		set_coin_count(coins +1)
+	elif area_that_entered.is_in_group("energy"):
+		set_energy(energy + 20)
