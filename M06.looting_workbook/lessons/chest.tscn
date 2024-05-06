@@ -68,7 +68,7 @@ shape = SubResource("RectangleShape2D_qot5x")
 material = SubResource("ShaderMaterial_unx14")
 
 [node name="Bottom" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(2, 14)
+position = Vector2(0, 16)
 texture = ExtResource("1_kx4y3")
 
 [node name="Top" type="Sprite2D" parent="CanvasGroup"]
@@ -76,7 +76,7 @@ position = Vector2(2, 2)
 texture = ExtResource("2_en3ln")
 
 [node name="Lock" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(2, 27)
+position = Vector2(0, 29)
 texture = ExtResource("3_76w00")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
